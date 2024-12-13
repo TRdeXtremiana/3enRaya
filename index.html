@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>3 en Raya</title>
+	<link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>
+	<div id="mode-select">
+		<label for="mode">Selecciona el modo de juego:</label>
+		<select id="mode">
+			<option value="2-players">2 Jugadores</option>
+			<option value="1-player">1 Jugador (vs IA)</option>
+		</select>
+	</div>
+
+	<div id="game-screen" class="hidden">
+		<h1 id="game-mode-title">vs IA</h1>
+		<div id="board"></div>
+		<p id="message"></p>
+		<button id="restart-btn">Reiniciar Juego</button>
+		<div id="victories">
+			<p>Victorias X: <span id="victory-x">0</span></p>
+			<p>Victorias O: <span id="victory-o">0</span></p>
+		</div>
+	</div>
+
+	<script src="JS/script.js"></script>
+</body>
+
+</html>

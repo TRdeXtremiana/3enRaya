@@ -1,0 +1,67 @@
+.hidden {
+	display: none;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #f4f4f4;
+	margin: 0;
+}
+
+#game-screen {
+	text-align: center;
+}
+
+#board {
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-template-rows: repeat(3, 100px);
+	gap: 5px;
+	margin: 20px auto;
+}
+
+.cell {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0;
+	cursor: pointer;
+	border: 2px solid #ccc;
+}
+
+#restart-btn {
+	display: block;
+	margin: 20px auto;
+	padding: 10px 20px;
+	background-color: #28a745;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+#victories {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#victories p {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#mode-select {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#game-mode-title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
