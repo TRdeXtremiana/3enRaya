@@ -2,7 +2,7 @@
 let currentPlayer = 'X';
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameOver = false;
-let mode = '1-player';
+let mode = ''; // Se inicializa como vacío, para obligar a seleccionar un modo
 let victoriesX = 0;
 let victoriesO = 0;
 
@@ -54,10 +54,16 @@ const handleVictory = () => {
 
 // Función principal para inicializar el juego
 const initGame = () => {
-	gameBoard.fill('');
-	gameOver = false;
-	messageElement.textContent = '';
-	boardElement.innerHTML = '';
+	gameBoard.fill(''); // Vaciar el tablero
+	gameOver = false; // Desactivar el estado de "juego terminado"
+	messageElement.textContent = ''; // Borrar mensaje anterior
+	boardElement.innerHTML = ''; // Borrar el tablero
+
+	// Verificar si el modo está seleccionado
+	if (!mode) {
+		alert('Por favor, selecciona un modo de juego.');
+		return;
+	}
 
 	// Actualizar título según el modo de juego
 	gameModeTitle.textContent = mode === '1-player' ? 'vs IA' : 'vs Player';
@@ -71,9 +77,9 @@ const initGame = () => {
 		boardElement.appendChild(cell);
 	}
 
-	// Ocultar selector de modo y mostrar tablero
-	modeSelectContainer.style.display = 'none';
-	gameScreen.classList.remove('hidden');
+	// Ocultar selector de modo solo cuando se inicia el juego
+	modeSelectContainer.style.display = 'none'; // Oculta el selector
+	gameScreen.classList.remove('hidden'); // Muestra la pantalla de juego
 };
 
 // Manejar el click en las celdas
@@ -90,8 +96,10 @@ const handleCellClick = (event) => {
 	// Verificar si hay un ganador
 	if (isGameWon()) return handleVictory();
 
-	// Cambiar al siguiente jugador y, si es la IA, hacer su movimiento
+	// Cambiar al siguiente jugador
 	changePlayer();
+
+	// Si es el modo de un jugador (vs IA), hacer el movimiento de la IA
 	if (mode === '1-player' && currentPlayer === 'O') aiMove();
 };
 
@@ -116,8 +124,8 @@ const aiMove = () => {
 
 // Reiniciar el juego
 const restartGame = () => {
-	modeSelectContainer.style.display = 'block';
-	gameScreen.classList.add('hidden');
+	modeSelectContainer.style.display = 'block'; // Mostrar selector al reiniciar
+	gameScreen.classList.add('hidden'); // Ocultar pantalla de juego
 	initGame();
 };
 
@@ -131,4 +139,5 @@ modeSelect.addEventListener('change', (event) => {
 restartButton.addEventListener('click', restartGame);
 
 // Inicializar el juego al cargar la página
-initGame();
+modeSelectContainer.style.display = 'block'; // Mostrar el selector antes de iniciar
+gameScreen.classList.add('hidden'); // Mantener oculta la pantalla de juego hasta que se seleccione el modo
