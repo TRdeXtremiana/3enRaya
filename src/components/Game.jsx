@@ -3,6 +3,7 @@ import Board from "./Board";
 import ModeSelector from "./ModeSelector";
 import DifficultySelector from "./DifficultySelector";
 import styles from "./Game.module.css";
+import Square from "./Square";
 
 import { calculateWinner } from "../utils/calculateWinner";
 import { moveEasy, moveMedium, moveHard } from "../utils/ai";
