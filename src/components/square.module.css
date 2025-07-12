@@ -1,33 +1,42 @@
 .square {
+  width: 80px;        /* ancho fijo */
+  height: 80px;       /* alto fijo */
+  font-size: 2rem;    /* tamaño del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+  cursor: pointer;
+  background-color: white;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box; /* importante para que padding no aumente tamaño */
+  position: relative;
+}
+
+.square:disabled {
+  background-color: #ddd;
+  cursor: default;
+}
+
+.square.red {
+  color: #e63946;
+}
+
+.square.green {
+  color: #2a9d8f;
+}
+
+.square:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Responsive: cambia tamaño y mantiene cuadrado */
+@media (max-width: 500px) {
+  .square {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    background-color: #ffffff;
-    border: 2px solid #ccc;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 0;
+    padding-bottom: 100%; /* altura igual al ancho */
+    font-size: 1.5rem;    /* texto más pequeño */
   }
-  
-  .square:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-  }
-  
-  .square.red {
-    color: #e63946;
-  }
-  
-  .square.green {
-    color: #2a9d8f;
-  }
-  
-  .square:active:not(:disabled) {
-    transform: scale(0.95);
-  }
-  
+}

@@ -1,16 +1,17 @@
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  max-width: 300px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 80px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 260px; /* limita el ancho total */
 }
 
-  
-  @media (max-width: 500px) {
-    .board {
-      grid-template-columns: repeat(3, minmax(60px, 1fr));
-      gap: 8px;
-    }
+@media (max-width: 500px) {
+  .board {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 240px; /* 3 casillas de máximo 80px */
+    gap: 8px;
+    margin: 20px auto;
   }
-  
+}
