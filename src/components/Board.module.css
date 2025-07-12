@@ -1,15 +1,22 @@
 .board {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(80px, 1fr));
-    gap: 10px;
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 1rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
   
   @media (max-width: 500px) {
     .board {
       grid-template-columns: repeat(3, minmax(60px, 1fr));
+      gap: 8px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .board {
+      max-width: 240px;
       gap: 8px;
     }
   }

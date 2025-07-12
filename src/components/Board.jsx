@@ -1,5 +1,4 @@
-import Square from "./Square";
-import styles from "./Game.module.css";
+import styles from "./Board.module.css";
 
 export default function Board({ squares, onClick }) {
   return (
