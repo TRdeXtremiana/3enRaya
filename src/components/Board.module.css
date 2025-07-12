@@ -14,10 +14,3 @@
     }
   }
   
-  @media (max-width: 500px) {
-    .board {
-      max-width: 240px;
-      gap: 8px;
-    }
-  }
-  
