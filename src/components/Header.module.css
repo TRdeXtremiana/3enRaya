@@ -1,0 +1,30 @@
+.header {
+    width: 100%;
+    height: 10vh; /* altura fija proporcional a la ventana */
+    background-color: #282c34;
+    display: flex;               /* para centrar con flexbox */
+    justify-content: center;     /* centrar horizontal */
+    align-items: center;         /* centrar vertical */
+    text-align: center;
+    font-size: 1rem;
+    box-sizing: border-box;
+    padding: 0 1rem;             /* algo de espacio lateral */
+    color: white;
+  }
+  
+  /* Tablet */
+  @media (max-width: 1023px) {
+    .header {
+      font-size: 1rem;
+      padding: 0 0.8rem;
+    }
+  }
+  
+  /* Móvil */
+  @media (max-width: 767px) {
+    .header {
+      font-size: 0.6rem;
+      padding: 0 0.6rem;
+    }
+  }
+  

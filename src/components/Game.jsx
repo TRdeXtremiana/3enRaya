@@ -57,16 +57,29 @@ export default function Game() {
   }
 
   return (
-    <div className={styles.game}>
-      <ModeSelector mode={mode} onChange={(e) => { setMode(e.target.value); resetGame(); }} />
+    <main className={styles.game}>
+      <ModeSelector
+        mode={mode}
+        onChange={(e) => {
+          setMode(e.target.value);
+          resetGame();
+        }}
+      />
       {mode === "cpu" && (
-        <DifficultySelector difficulty={difficulty} onChange={(e) => { setDifficulty(e.target.value); resetGame(); }} />
+        <DifficultySelector
+          difficulty={difficulty}
+          onChange={(e) => {
+            setDifficulty(e.target.value);
+            resetGame();
+          }}
+        />
       )}
       <p className={styles.status}>{status}</p>
       <Board squares={board} onClick={handleClick} />
       <button className={styles.resetBtn} onClick={resetGame}>
         Reiniciar
       </button>
-    </div>
+    </main>
   );
+  
 }

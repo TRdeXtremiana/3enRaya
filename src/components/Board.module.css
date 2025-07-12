@@ -1,17 +1,24 @@
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 80px);
-  grid-gap: 10px;
-  justify-content: center;
-  margin: 20px auto;
-  max-width: 260px; /* limita el ancho total */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem; /* espacio pequeño entre cuadrados */
+  margin: 2rem auto;
+
+  max-width: calc(3 * 110px + 2 * 0.5rem); /* máximo ancho en PC */
+  width: 100%; /* que no crezca más que max-width */
+  box-sizing: border-box;
 }
 
-@media (max-width: 500px) {
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
   .board {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 240px; /* 3 casillas de máximo 80px */
-    gap: 8px;
-    margin: 20px auto;
+    max-width: calc(3 * 90px + 2 * 0.5rem);
+  }
+}
+
+/* Móvil */
+@media (max-width: 767px) {
+  .board {
+    max-width: calc(3 * 70px + 2 * 0.5rem);
   }
 }
