@@ -1,90 +1,31 @@
-/* src/components/Game.module.css */
-
 .game {
-    max-width: 320px;
-    margin: 2rem auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .status {
-    font-weight: bold;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-  }
-  
-  .board {
-    display: grid;
-    grid-template-columns: repeat(3, 80px);
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  
-  .square {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-    cursor: pointer;
-    background-color: white;
-    border: 2px solid #444;
-    border-radius: 6px;
-    transition: background-color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    padding: 0;
-  }
-  
-  .square:hover {
-    background-color: #eee;
-  }
-  
-  /* Casilla usada: fondo gris y cursor no pointer */
-  .used {
-    background-color: #ccc !important;
-    cursor: default !important;
-  }
-  
-  .square.used:hover {
-    background-color: #ccc !important;
-    cursor: default !important;
-  }
-  
-  /* X en rojo */
-  .x {
-    color: red;
-    font-weight: bold;
-  }
-  
-  /* O en verde */
-  .o {
-    color: green;
-    font-weight: bold;
-  }
-  
-  /* Si quieres que O sea negro, reemplaza la regla anterior por esta: */
-  /*
-  .o {
-    color: black;
-    font-weight: bold;
-  }
-  */
-  
-  /* Botón reiniciar */
-  .resetBtn {
-    padding: 8px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: #282c34;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .resetBtn:hover {
-    background-color: #3c4048;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #f4f4f4, #e2e2e2);
+  color: #333;
+}
+
+.status {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.resetBtn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #4e7dff;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resetBtn:hover {
+  background-color: #345ad6;
+}

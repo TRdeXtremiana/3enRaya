@@ -1,22 +1,14 @@
-import styles from "./Game.module.css";
+import styles from "./Square.module.css";
 
 export default function Square({ value, onClick }) {
-  // Clases dinámicas:
-  // - styles.square siempre
-  // - styles.used si la casilla tiene valor (X u O)
-  // - styles.x o styles.o según el valor
-
-  const classNames = [
-    styles.square,
-    value ? styles.used : "",
-    value === "X" ? styles.x : "",
-    value === "O" ? styles.o : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const colorClass = value === "X" ? styles.red : value === "O" ? styles.green : "";
 
   return (
-    <button className={classNames} onClick={onClick} disabled={!!value}>
+    <button
+      className={`${styles.square} ${colorClass}`}
+      onClick={onClick}
+      disabled={value !== null}
+    >
       {value}
     </button>
   );

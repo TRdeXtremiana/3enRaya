@@ -1,0 +1,33 @@
+.square {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .square:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .square.red {
+    color: #e63946;
+  }
+  
+  .square.green {
+    color: #2a9d8f;
+  }
+  
+  .square:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+  
